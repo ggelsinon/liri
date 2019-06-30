@@ -1,3 +1,24 @@
+Liri (like Siri) should take in requests to search for either a movie, a song or a concert from a random txt file and return relevant information using the OMDB, Bands In Town and Spotify APIs
+
+The file structure includes the needed javascript files keys (for our API keys) and liri (for the main javascript code) as well as a random.txt file with search inputs for Liri to randomly select from
+
+To run the app one should
+
+Here is a screenshot of Liri in action
+
+The deployed version can be found:
+
+Tech Stack Used:
+Axios
+Javascript Node
+JSON
+APIs: Node-Spotify-API, Axios, Moment, OMDB, Bands In Town, and DotEnv
+
+With the help of my new tutor Michell Brito I wrote the code for the app to run
+
+
+Instructions for the Assignment:
+
 # liri
 # LIRI Bot
 
