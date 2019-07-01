@@ -28,9 +28,7 @@ var concertThis = function (artist) {
                 console.log(tourData);
             }
         })
-        .catch(function (err) {
-            console.log(err);
-        });
+
 }
 // concertThis("garth brooks");
 
@@ -44,33 +42,31 @@ var songThis = function (songName) {
         {
             type: "track",
             query: songName,
-            limit: 1,
 
         }),
         function (error, data) {
             if (error) {
                 return console.log('error occurred: ' + error);
-
-            } else {
-                var searchResult = response.tracks.items[0];
-                var songInfo = [
-                    "Song Name: " + searchResult.name,
-                    "Artist Name: " + searchResult.artists[0].name,
-                    "Preview Link: " + searchResult.preview_url,
-                    "Album: " + searchResult.album.name,
-                    divider,
-                ];
-                console.log(songInfo);
-
-            };
-        }
-            .catch(function (err) {
-                console.log(err);
-            });
+            }
+            var songData = data.tracks.items[0]
+            console.log(divider);
+            console.log("Song Name: " + songData.name);
+            console.log("Artist: " + songData.artists[0].name);
+            console.log("Preview URL: " + songData.preview_url);
+            console.log(divider);
+        };
 }
+// var searchResult = response.tracks.items[0];
+// var songInfo = [
+//     "Song Name: " + searchResult.name,
+//     "Artist Name: " + searchResult.artists[0].name,
+//     "Preview Link: " + searchResult.preview_url,
+//     "Album: " + searchResult.album.name,
+//     divider,
+// ];
+// console.log(songInfo);
 
-
-// songThis("celebrate")
+songThis("take on me");
 
 var movieThis = function (movieName) {
     var movieURL = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=trilogy";
@@ -78,17 +74,17 @@ var movieThis = function (movieName) {
         function (response) {
             var jSONdata = response.data;
             var movieData = [
-                "Title: " + jsonData.Title,
-                "Year: " + jsonData.Year,
-                "IMDB Rating: " + jsonData.imdbRating,
-                "Rotten Tomato Rating: " + jsonData.tomatoRating,
-                "Country Produced: " + jsonData.Country,
-                "Plot: " + jsonData.Plot,
-                "Actors: " + jsonData.Actors,
+                "Title: " + jSONdata.Title,
+                "Year: " + jSONdata.Year,
+                "IMDB Rating: " + jSONdata.imdbRating,
+                "Rotten Tomato Rating: " + jSONdata.tomatoRating,
+                "Country Produced: " + jSONdata.Country,
+                "Plot: " + jSONdata.Plot,
+                "Actors: " + jSONdata.Actors,
                 divider,
             ].join("\n\n");
 
-            console.log(jSONdata);
+
             console.log(movieData);
         }
     )
@@ -97,7 +93,7 @@ var movieThis = function (movieName) {
         });
 }
 
-movieThis("Ghost");
+// movieThis("Ghost");
 
 var doWhatItSays = function () {
     fs.readFile("random.txt", "utf8", function (error, data) {
