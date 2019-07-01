@@ -48,13 +48,13 @@ var songThis = function (songName) {
             if (error) {
                 return console.log('error occurred: ' + error);
             }
-            var songData = data.tracks.items[0]
-            console.log(divider);
-            console.log("Song Name: " + songData.name);
-            console.log("Artist: " + songData.artists[0].name);
-            console.log("Preview URL: " + songData.preview_url);
-            console.log(divider);
+            var songData = data.tracks
+            for (var i = 0; i < songData.length; i++) {
+                console.log(`Artist: ${songData.items[i].artists[0].name}\nSong Name: ${songData.items[i].name}\n Album Name: ${songData.items[i].album.name}\nPreview Link: ${songData.items[i].preview_url}\n`);
+                divider;
+            }
         };
+        console.log(songData);
 }
 // var searchResult = response.tracks.items[0];
 // var songInfo = [
