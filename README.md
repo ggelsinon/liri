@@ -16,6 +16,8 @@ APIs: Node-Spotify-API, Axios, Moment, OMDB, Bands In Town, and DotEnv
 
 With the help of my new tutor Michell Brito I wrote the code for the app to run
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/N4pxzDBIjKA/0.jpg)](https://www.youtube.com/watch?v=N4pxzDBIjKA)
+
 
 Instructions for the Assignment:
 
